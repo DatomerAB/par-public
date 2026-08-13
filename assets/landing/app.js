@@ -30,7 +30,7 @@
     }
   });
 
-  // Configure download/waitlist links from config.json
+  // Configure download buttons from config.json
   async function configureActions() {
     let config = {};
     try {
@@ -39,32 +39,23 @@
         config = await response.json();
       }
     } catch (err) {
-      // eslint-disable-next-line no-console
       console.warn('Failed to load landing page config:', err);
     }
 
     const downloadUrl = config.downloadUrl?.trim() || '';
-    const waitlistUrl = config.waitlistUrl?.trim() || '';
-    const effectiveUrl = downloadUrl || waitlistUrl || '#';
 
     const downloadSelectors = ['#downloadBtn', '#heroDownloadBtn', '#navDownloadBtn'];
     downloadSelectors.forEach((selector) => {
       const btn = document.querySelector(selector);
       if (!btn) return;
 
-      btn.setAttribute('href', effectiveUrl);
-
-      if (!downloadUrl && waitlistUrl) {
-        btn.setAttribute('target', '_blank');
-        btn.setAttribute('rel', 'noopener');
-        btn.textContent = btn.textContent.replace('Download for Mac', 'Join the waitlist');
+      if (downloadUrl) {
+        btn.setAttribute('href', downloadUrl);
+      } else {
+        // No release yet: scroll to the inline waitlist form
+        btn.setAttribute('href', '#download');
       }
     });
-
-    const waitlistBtn = document.getElementById('waitlistBtn');
-    if (waitlistBtn && waitlistUrl) {
-      waitlistBtn.setAttribute('href', waitlistUrl);
-    }
   }
 
   configureActions();
