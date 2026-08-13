@@ -808,3 +808,31 @@ a {
     transform: none;
   }
 }
+
+/* Waitlist form */
+.waitlist-form {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.waitlist-input {
+  padding: 0.85rem 1.2rem;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  min-width: 240px;
+}
+
+.waitlist-input::placeholder {
+  color: var(--text-muted);
+}
+
+.waitlist-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}

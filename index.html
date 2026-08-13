@@ -348,7 +348,10 @@
           <p>Download the free beta for macOS and keep your AI entirely on your device.</p>
           <div class="cta-actions">
             <a href="#download" class="btn btn-primary btn-large" id="downloadBtn">Download for Mac</a>
-            <a href="https://example.com/waitlist" target="_blank" rel="noopener" class="btn btn-secondary btn-large" id="waitlistBtn">Join the waitlist</a>
+            <form action="https://formspree.io/f/mjybokor" method="POST" class="waitlist-form">
+              <input type="email" name="email" placeholder="Enter your email" required class="waitlist-input">
+              <button type="submit" class="btn btn-secondary btn-large">Join the waitlist</button>
+            </form>
           </div>
           <p class="cta-note">Beta release. Requires macOS 11+. Apple Silicon recommended. GGUF models run natively; Ollama is optional.</p>
         </div>
@@ -380,7 +383,7 @@
           <h4>Company</h4>
           <a href="#privacy">Privacy</a>
           <a href="mailto:support@par.app">Contact</a>
-          <a href="https://example.com/waitlist">Join waitlist</a>
+          <a href="#download">Join waitlist</a>
         </div>
       </div>
     </div>
