@@ -1,0 +1,53 @@
+name: Update landing page download URL
+
+# This workflow is triggered by a repository_dispatch event from the private
+# DatomerAB/Par repo after a release has been mirrored to DatomerAB/par-releases.
+# It updates the public landing page's download URL and lets GitHub Pages deploy.
+#
+# No secrets are required beyond the default GITHUB_TOKEN.
+
+on:
+  repository_dispatch:
+    types: [release-published]
+
+jobs:
+  update-download-url:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update config.json with new DMG URL
+        env:
+          TAG: ${{ github.event.client_payload.tag }}
+          DMG_URL: ${{ github.event.client_payload.dmg_url }}
+        run: |
+          if [[ -z "${DMG_URL}" ]]; then
+            echo "No dmg_url provided in dispatch payload"
+            exit 1
+          fi
+
+          mkdir -p assets/landing
+          printf '{\n  "downloadUrl": "%s"\n}\n' "$DMG_URL" > assets/landing/config.json
+
+          echo "Updated assets/landing/config.json:"
+          cat assets/landing/config.json
+
+      - name: Commit and push
+        env:
+          TAG: ${{ github.event.client_payload.tag }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/landing/config.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "chore: update download URL to ${TAG}"
+          git push
+
+          echo "Pushed download URL update for ${TAG}"
