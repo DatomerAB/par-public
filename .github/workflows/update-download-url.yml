@@ -1,53 +1,86 @@
 name: Update landing page download URL
 
-# This workflow is triggered by a repository_dispatch event from the private
-# DatomerAB/Par repo after a release has been mirrored to DatomerAB/par-releases.
-# It updates the public landing page's download URL and lets GitHub Pages deploy.
-#
-# No secrets are required beyond the default GITHUB_TOKEN.
-
 on:
   repository_dispatch:
-    types: [release-published]
+    types:
+      - release-published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g. v0.1.0-beta.2026083101)"
+        required: true
+        type: string
+      dmg_url:
+        description: "Direct download URL for the macOS DMG"
+        required: true
+        type: string
+
+permissions:
+  contents: write
 
 jobs:
-  update-download-url:
+  update:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Use a PAT if branch protection prevents GITHUB_TOKEN pushes.
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update config.json with new DMG URL
+      - name: Update config.json
+        shell: bash
         env:
-          TAG: ${{ github.event.client_payload.tag }}
-          DMG_URL: ${{ github.event.client_payload.dmg_url }}
+          TAG: ${{ github.event.client_payload.tag || inputs.tag }}
+          DMG_URL: ${{ github.event.client_payload.dmg_url || inputs.dmg_url }}
         run: |
-          if [[ -z "${DMG_URL}" ]]; then
-            echo "No dmg_url provided in dispatch payload"
+          set -euo pipefail
+
+          if [[ -z "$TAG" ]]; then
+            echo "❌ Missing required input: tag"
             exit 1
           fi
 
-          mkdir -p assets/landing
-          printf '{\n  "downloadUrl": "%s"\n}\n' "$DMG_URL" > assets/landing/config.json
+          if [[ -z "$DMG_URL" ]]; then
+            echo "❌ Missing required input: dmg_url"
+            exit 1
+          fi
 
-          echo "Updated assets/landing/config.json:"
-          cat assets/landing/config.json
+          CONFIG_PATH="assets/landing/config.json"
+          if [[ ! -f "$CONFIG_PATH" ]]; then
+            echo "❌ Config file not found: $CONFIG_PATH"
+            exit 1
+          fi
+
+          # Validate that the download URL is reachable before committing.
+          HTTP_STATUS=$(curl -sSL -o /dev/null -w '%{http_code}' --max-time 30 "$DMG_URL" || true)
+          if [[ "$HTTP_STATUS" != "200" && "$HTTP_STATUS" != "302" && "$HTTP_STATUS" != "307" ]]; then
+            echo "❌ DMG URL is not reachable (HTTP $HTTP_STATUS): $DMG_URL"
+            exit 1
+          fi
+
+          # Preserve other keys in config.json and update downloadUrl.
+          jq --arg url "$DMG_URL" '.downloadUrl = $url' "$CONFIG_PATH" > "$CONFIG_PATH.tmp"
+          mv "$CONFIG_PATH.tmp" "$CONFIG_PATH"
+
+          echo "✅ Updated $CONFIG_PATH with download URL for $TAG"
+          cat "$CONFIG_PATH"
 
       - name: Commit and push
+        shell: bash
         env:
-          TAG: ${{ github.event.client_payload.tag }}
+          TAG: ${{ github.event.client_payload.tag || inputs.tag }}
         run: |
+          set -euo pipefail
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/landing/config.json
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
+          if git diff --quiet -- assets/landing/config.json; then
+            echo "ℹ No changes to commit."
             exit 0
           fi
 
-          git commit -m "chore: update download URL to ${TAG}"
-          git push
-
-          echo "Pushed download URL update for ${TAG}"
+          git add assets/landing/config.json
+          git commit -m "chore: update download URL to $TAG"
+          git push origin main
