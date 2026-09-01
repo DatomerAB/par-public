@@ -1,13 +1,16 @@
-# Pär Public Landing Page
+# par-public — Pär download & legal fallback
 
-This is the customer-facing repository for [Pär](https://par.app). It contains only the public landing page, assets, and the GitHub Pages deployment workflow.
+This is the lightweight public fallback site for [Pär](https://datomer.eu). It is hosted on GitHub Pages and serves as a resilient download and legal-attribution mirror for the product.
+
+**datomer.eu is the canonical marketing site.** This repository intentionally does *not* duplicate product features, pricing, FAQ, or blog content. All marketing content lives at [https://datomer.eu](https://datomer.eu).
 
 ## What's here
 
-- `index.html` — public marketing page
+- `index.html` — minimal download & legal landing page
 - `assets/landing/` — styles, scripts, icons, and images
-- `docs/NOTICE.md` — third-party open-source model attribution
+- `docs/NOTICE.md` — third-party open-source model attribution (auto-synced)
 - `.github/workflows/static.yml` — GitHub Pages deployment
+- `.github/workflows/check-par-sync.yml` — validates `NOTICE.md` stays in sync
 
 ## What's NOT here
 
@@ -25,15 +28,16 @@ Open http://localhost:8000.
 
 Push to the `main` branch. GitHub Actions will deploy to Pages automatically.
 
-## Update the download link
+## Download URL
 
-Edit `assets/landing/config.json` and set `downloadUrl` to the signed DMG asset URL.
+`assets/landing/config.json` is updated automatically when a release is published from the private `Pär` repository. Do not edit it by hand unless you are fixing an emergency fallback URL.
 
-## Update model attribution
+## Model attribution
 
-Model attributions are generated from the canonical model catalog in the private `Pär` repository (`config/routing.yaml`) by the `LicenseAttributionAgent`. When models change:
+`docs/NOTICE.md` is kept in sync automatically by the `sync-public-content.yml` workflow in the private `Pär` repository. The canonical source is `Pär/NOTICE.md`, generated from `config/routing.yaml` by the `LicenseAttributionAgent`.
 
-1. Run `python scripts/sync_attribution.py --write` in the `Pär` repository to regenerate `NOTICE.md` and `legal/` license texts.
-2. Copy the model table in `docs/NOTICE.md` from the generated `NOTICE.md` or from [https://datomer.eu/models](https://datomer.eu/models).
-3. Update `index.html` footer link if needed.
-4. Commit and push to `main` to redeploy GitHub Pages.
+If the automated sync fails, run the following in the `Pär` repository and then trigger the `sync-public-content.yml` workflow:
+
+```bash
+python scripts/sync_attribution.py --write
+```

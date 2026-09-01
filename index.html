@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pär — a local-first personal AI companion with persistent memory, personalization, and smart model routing. Your data stays on your device.">
+  <meta name="description" content="Pär — a local-first personal AI companion that runs on your Mac. Download the beta and keep your data on your device.">
   <meta property="og:title" content="Pär — Your AI, on your device.">
   <meta property="og:description" content="Private by design. Pär remembers you, knows your world, and runs entirely on your hardware.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/landing/icon.png">
+  <link rel="canonical" href="https://datomer.eu/">
   <link rel="icon" type="image/x-icon" href="assets/landing/favicon.ico">
   <link rel="apple-touch-icon" href="assets/landing/icon.png">
   <title>Pär — Your AI, on your device.</title>
@@ -19,30 +20,19 @@
 <body>
   <header class="site-header">
     <div class="container nav-bar">
-      <a href="#" class="logo" aria-label="Pär home">
+      <a href="https://datomer.eu" class="logo" aria-label="Pär home">
         <img src="assets/landing/icon.png" alt="" class="logo-img" aria-hidden="true">
         <span class="logo-mark">Pär</span>
       </a>
       <nav class="main-nav" aria-label="Primary">
-        <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#faq">FAQ</a>
+        <a href="https://datomer.eu">Home</a>
+        <a href="https://datomer.eu/models">Models</a>
+        <a href="docs/NOTICE.md">Licenses</a>
       </nav>
       <div class="nav-actions">
         <a href="#download" class="btn btn-primary" id="navDownloadBtn">Download for Mac</a>
-        <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-          <span></span><span></span><span></span>
-        </button>
       </div>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
-      <a href="#features">Features</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
-      <a href="#download" class="btn btn-primary">Download for Mac</a>
-    </nav>
   </header>
 
   <main>
@@ -54,11 +44,10 @@
           <p class="hero-lead">
             Pär is the personal AI companion that actually remembers you. It learns your goals,
             connects to your tools, and runs entirely on your own hardware — no cloud required.
-            Bring your own GGUF models or Ollama models.
           </p>
           <div class="hero-actions">
             <a href="#download" class="btn btn-primary btn-large" id="heroDownloadBtn">Download for Mac</a>
-            <a href="#features" class="btn btn-secondary btn-large">See how it works</a>
+            <a href="https://datomer.eu" class="btn btn-secondary btn-large">Learn more</a>
           </div>
           <div class="hero-logo">
             <img src="assets/landing/logo.jpg" alt="Pär app preview">
@@ -77,246 +66,6 @@
               <span>Encrypted vault</span>
             </li>
           </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section problem-solution" id="how-it-works">
-      <div class="container">
-        <div class="section-intro">
-          <h2>One agent for your digital life</h2>
-          <p>
-            Most AI assistants start every conversation from zero. Pär builds a living model of
-            who you are, what you are working on, and what matters to you — and keeps it under your control.
-          </p>
-        </div>
-        <div class="three-up">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🧠</div>
-            <h3>Knows you</h3>
-            <p>Persistent, encrypted memory means Pär remembers every conversation. Your profile, goals, and style are injected into every response.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🌍</div>
-            <h3>Knows your world</h3>
-            <p>Connect calendar, email, tasks, and notes. Pär refreshes context in the background so you never have to paste information again.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">⚡</div>
-            <h3>Acts for you</h3>
-            <p>Smart model routing picks the best local model for each task. Routines, web search, and document exports get things done.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section features" id="features">
-      <div class="container">
-        <div class="section-intro">
-          <h2>Built for serious daily use</h2>
-          <p>Everything you expect from a modern AI assistant, designed around privacy and ownership.</p>
-        </div>
-        <div class="feature-grid">
-          <article class="feature">
-            <h4>Persistent memory <span class="tier-pill">Plus+</span></h4>
-            <p>Cross-session history stored encrypted on-device. Find past conversations by meaning, not just keyword.</p>
-          </article>
-          <article class="feature">
-            <h4>Personal Context Graph <span class="tier-pill">Plus+</span></h4>
-            <p>A unified, continuously updated view of your profile, commitments, and live external state.</p>
-          </article>
-          <article class="feature">
-            <h4>Smart model routing <span class="tier-pill">Plus+</span></h4>
-            <p>Automatically chooses the right local model for chat, code, vision, or reasoning tasks.</p>
-          </article>
-          <article class="feature">
-            <h4>Live integrations <span class="tier-pill">Plus+</span></h4>
-            <p>Gmail, Google Calendar, Notion, Todoist, Slack, GitHub, and more — read and write on your behalf.</p>
-          </article>
-          <article class="feature">
-            <h4>Local file intelligence <span class="tier-pill">Plus+</span></h4>
-            <p>Drag in text, PDFs, and images. Build a personal knowledge base from folders on your machine.</p>
-          </article>
-          <article class="feature">
-            <h4>Routines & templates <span class="tier-pill">Plus+</span></h4>
-            <p>Saved workflows like Morning Briefing, Weekly Review, and Inbox Zero run on your schedule.</p>
-          </article>
-          <article class="feature">
-            <h4>Semantic cache <span class="tier-pill">Plus+</span></h4>
-            <p>Near-instant answers to repeated questions without re-running the model.</p>
-          </article>
-          <article class="feature">
-            <h4>Full data portability <span class="tier-pill">All tiers</span></h4>
-            <p>Export and import your vault, conversations, and profiles anytime. Your data is always yours.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section privacy" id="privacy">
-      <div class="container split">
-        <div class="split-content">
-          <h2>Privacy is not a feature.<br>It is the foundation.</h2>
-          <p>
-            Pär runs inference on your device using local models. Your memory, files, and profile live in an
-            encrypted vault on your machine. No silent cloud sync. No training on your data.
-          </p>
-          <ul class="checklist">
-            <li>Native GGUF support + optional Ollama integration</li>
-            <li>SQLCipher AES-256 encrypted vault</li>
-            <li>Personal context stripped for any optional cloud backend</li>
-            <li>App lock with PIN and optional TOTP MFA</li>
-            <li>Backup integrity verification</li>
-          </ul>
-        </div>
-        <div class="split-visual" aria-hidden="true">
-          <div class="privacy-stack">
-            <div class="stack-item local">🖥️ Local inference</div>
-            <div class="stack-item vault">🔒 Encrypted vault</div>
-            <div class="stack-item you">👤 You own the keys</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section deployment" id="deployment">
-      <div class="container">
-        <div class="section-intro">
-          <h2>Choose where it runs</h2>
-          <p>One brand, one license, multiple deployment options. Pick the privacy level that fits your hardware.</p>
-        </div>
-        <div class="three-up deployment-cards">
-          <article class="card card-highlight">
-            <div class="card-badge available">Available now</div>
-            <h3>Pär Desktop</h3>
-            <p>macOS app with on-device models and a local vault in <code>~/.peer/</code>. Everything stays on your Mac.</p>
-            <span class="card-foot">Best for Mac users</span>
-          </article>
-          <article class="card">
-            <div class="card-badge soon">Coming soon</div>
-            <h3>Pär Web</h3>
-            <p>Runs in your browser, talks to your own local backend. Windows, Linux, and Chromebook support.</p>
-            <span class="card-foot">Best for cross-platform</span>
-          </article>
-          <article class="card">
-            <div class="card-badge soon">Coming soon</div>
-            <h3>Pär Cloud</h3>
-            <p>We host the model; your personal context stays on your device. PII-redacted by default.</p>
-            <span class="card-foot">Best for users without local GPUs</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section pricing" id="pricing">
-      <div class="container">
-        <div class="section-intro">
-          <h2>Simple, transparent pricing</h2>
-          <p>Start free. Upgrade when you want Pär to remember everything.</p>
-        </div>
-        <div class="pricing-grid">
-          <article class="pricing-card">
-            <h3>Free</h3>
-            <p class="price">$0 <span>forever</span></p>
-            <ul>
-              <li>Local chat with GGUF or Ollama models</li>
-              <li>Session memory (1 day / 20 messages)</li>
-              <li>Basic model routing (first available model)</li>
-              <li>One custom tone profile</li>
-              <li>P2P device connect (best-effort)</li>
-              <li>Community support</li>
-            </ul>
-            <p class="tier-note">Upgrade to Plus for persistent cross-session history.</p>
-            <a href="#download" class="btn btn-secondary">Download free</a>
-          </article>
-          <article class="pricing-card recommended">
-            <div class="popular-badge">Most popular</div>
-            <h3>Plus</h3>
-            <p class="price">$4 <span>/ month</span></p>
-            <p class="billed">or $39/year</p>
-            <ul>
-              <li>Everything in Free</li>
-              <li>Persistent cross-session history</li>
-              <li>Personal Context Graph</li>
-              <li>Smart model routing + cascade</li>
-              <li>Semantic cache &amp; search</li>
-              <li>File upload &amp; local knowledge base</li>
-              <li>Live web search</li>
-              <li>Routines &amp; templates</li>
-            </ul>
-            <a href="#download" class="btn btn-primary">Get Plus</a>
-          </article>
-          <article class="pricing-card">
-            <h3>Pro</h3>
-            <p class="price">$9 <span>/ user / month</span></p>
-            <p class="billed">or $79/user/year · min 3 seats</p>
-            <ul>
-              <li>Everything in Plus</li>
-              <li>Centralized model server</li>
-              <li>Admin dashboard &amp; seat management</li>
-              <li>SSO (OIDC)</li>
-              <li>Audit log</li>
-              <li class="coming-soon">Team knowledge base — coming soon</li>
-              <li class="coming-soon">API access — coming soon</li>
-            </ul>
-            <a href="mailto:support@par.app" class="btn btn-secondary">Contact sales</a>
-          </article>
-          <article class="pricing-card">
-            <h3>Enterprise</h3>
-            <p class="price">Custom</p>
-            <p class="billed">Starting at $2,000/mo for up to 25 seats</p>
-            <ul>
-              <li>Everything in Pro</li>
-              <li>On-premise deployment (Docker / Helm)</li>
-              <li>Multi-user identity &amp; audit log</li>
-              <li>Local accounts (no SSO required)</li>
-              <li>Self-hosted team relay</li>
-              <li>Compliance export &amp; deletion certificates</li>
-              <li class="coming-soon">Custom fine-tuning — coming soon</li>
-              <li class="coming-soon">White-label options — coming soon</li>
-            </ul>
-            <a href="mailto:support@par.app" class="btn btn-secondary">Contact sales</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section faq" id="faq">
-      <div class="container narrow">
-        <div class="section-intro">
-          <h2>Frequently asked questions</h2>
-        </div>
-        <div class="faq-list">
-          <details>
-            <summary>Does Pär send my data to the cloud?</summary>
-            <p>
-              No. By default, Pär Desktop runs entirely on your Mac. Your conversations, memory, and files never leave your device unless you explicitly choose a different deployment mode.
-            </p>
-          </details>
-          <details>
-            <summary>What models can I use?</summary>
-            <p>
-              Pär runs quantized GGUF models natively through llama.cpp and can also use Ollama models. You choose which models to load — no external account needed.
-            </p>
-          </details>
-          <details>
-            <summary>Is there a Windows or Linux version?</summary>
-            <p>
-              Pär Desktop currently targets macOS. Pär Web — which runs in any modern browser against a local backend — is the fastest path to Windows and Linux support and is coming soon.
-            </p>
-          </details>
-          <details>
-            <summary>Can I export my data?</summary>
-            <p>
-              Yes. Every tier supports exporting your conversations, memory, profile, and personas to a portable JSON bundle. Pro and above also include structured export formats like Markdown, CSV, PDF, and .ics, plus confirmed deletion certificates on Enterprise.
-            </p>
-          </details>
-          <details>
-            <summary>How does licensing work?</summary>
-            <p>
-              A single license key is tied to your email and works across Pär Desktop, Web, and Cloud. Activation is local and persists across app restarts via your OS keychain.
-            </p>
-          </details>
         </div>
       </div>
     </section>
@@ -348,12 +97,9 @@
           <p>Download the free beta for macOS and keep your AI entirely on your device.</p>
           <div class="cta-actions">
             <a href="#download" class="btn btn-primary btn-large" id="downloadBtn">Download for Mac</a>
-            <form action="https://formspree.io/f/mjybokor" method="POST" class="waitlist-form">
-              <input type="email" name="email" placeholder="Enter your email" required class="waitlist-input">
-              <button type="submit" class="btn btn-secondary btn-large">Join the waitlist</button>
-            </form>
           </div>
           <p class="cta-note">Beta release. Requires macOS 11+. Apple Silicon recommended. GGUF models run natively; Ollama is optional.</p>
+          <p>Visit <a href="https://datomer.eu">datomer.eu</a> for features, pricing, FAQ, and the latest news.</p>
         </div>
       </div>
     </section>
@@ -365,31 +111,25 @@
         <img src="assets/landing/icon.png" alt="" class="logo-img" aria-hidden="true">
         <span class="logo-mark">Pär</span>
         <p>Your AI, on your device.</p>
+        <p class="footer-company">A product of <a href="https://datomer.eu">Datomer AB</a>.</p>
       </div>
       <div class="footer-links">
         <div>
           <h4>Product</h4>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
+          <a href="https://datomer.eu">Home</a>
+          <a href="https://datomer.eu/models">Models</a>
           <a href="#download">Download</a>
         </div>
         <div>
-          <h4>Support</h4>
-          <a href="#faq">FAQ</a>
-          <a href="#system-requirements">System requirements</a>
-          <a href="mailto:support@par.app">Contact support</a>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <a href="#privacy">Privacy</a>
+          <h4>Legal</h4>
           <a href="docs/NOTICE.md">Models & Licenses</a>
-          <a href="mailto:support@par.app">Contact</a>
-          <a href="#download">Join waitlist</a>
+          <a href="https://datomer.eu/privacy">Privacy</a>
+          <a href="https://datomer.eu/terms">Terms</a>
         </div>
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>© 2026 Pär. Built with care for people who own their data.</p>
+      <p>© 2026 Datomer AB. Pär is a registered trademark of Datomer AB.</p>
     </div>
   </footer>
 
