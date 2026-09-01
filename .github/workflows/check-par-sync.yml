@@ -1,0 +1,38 @@
+name: Check Pär content sync
+
+# Validates that par-public's legal attribution stays identical to the
+# canonical NOTICE.md generated in the private DatomerAB/Par repository.
+# This is a safety net in case a manual edit bypasses the automated sync.
+
+on:
+  pull_request:
+    paths:
+      - "docs/NOTICE.md"
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check-notice:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout par-public
+        uses: actions/checkout@v4
+
+      - name: Fetch canonical NOTICE from Pär
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/par-canonical
+          gh api repos/DatomerAB/Par/contents/NOTICE.md \
+            --jq '.content' \
+            | base64 -d > /tmp/par-canonical/NOTICE.md
+
+      - name: Compare NOTICE.md
+        run: |
+          set -euo pipefail
+          diff -u /tmp/par-canonical/NOTICE.md docs/NOTICE.md
+          echo "✅ par-public/docs/NOTICE.md matches Pär/NOTICE.md"
