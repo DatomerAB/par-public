@@ -689,12 +689,32 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 11px;
+}
+
+.footer-logo-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   margin-bottom: 0.5rem;
+}
+
+.footer-brand .logo-mark {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
 }
 
 .footer-brand p {
   color: var(--text-muted);
   margin: 0.5rem 0 0;
+}
+
+.footer-brand .datomer-logo {
+  width: auto;
+  height: 32px;
+  margin-top: 1rem;
+  opacity: 0.9;
 }
 
 .footer-links {
