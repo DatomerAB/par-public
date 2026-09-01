@@ -801,129 +801,196 @@ a {
 
 /* Footer */
 .site-footer {
+  padding: 44px 0 0;
   background: var(--surface);
   border-top: 1px solid var(--border);
-  padding: 3rem 0 1.5rem;
 }
 
-.footer-grid {
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-main {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  margin-bottom: 2.5rem;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.6fr) minmax(120px, 0.65fr);
+  gap: 28px;
+  align-items: center;
+  padding-bottom: 28px;
 }
 
-.footer-brand .logo-img {
-  width: 32px;
-  height: auto;
-  border-radius: 9px;
-  padding: 4px;
+.footer-brand-group {
+  min-width: 0;
+  padding-right: 16px;
 }
 
-.footer-logo-row {
+.footer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-brand .logo-mark {
-  font-size: 1.15rem;
+  gap: 8px;
+  margin-bottom: 8px;
   font-weight: 800;
+  font-size: 1.05rem;
   letter-spacing: -0.03em;
   color: var(--text);
 }
 
-.footer-brand p {
-  color: var(--text-muted);
-  margin: 0.5rem 0 0;
+.footer-brand .brand-symbol {
+  width: 32px;
+  height: auto;
+  padding: 4px;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px rgba(15, 23, 42, 0.06),
+    0 2px 6px rgba(15, 23, 42, 0.08);
 }
 
-.footer-brand .datomer-logo {
+.footer-tagline {
+  margin: 0;
+  max-width: 260px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.footer-tagline a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-tagline a:hover {
+  color: var(--accent);
+}
+
+.footer-company {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  padding-left: 20px;
+  border-left: 1px solid var(--border);
+}
+
+.footer-company .datomer-logo {
   height: 48px;
   width: auto;
-  margin-top: 1rem;
   opacity: 0.85;
   filter: grayscale(1) contrast(1.1);
   transition: opacity var(--transition-fast), filter var(--transition-fast);
 }
 
-.footer-brand:hover .datomer-logo {
+.footer-company:hover .datomer-logo {
   opacity: 1;
   filter: grayscale(0.2) contrast(1.2);
 }
 
 .footer-links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.footer-links h4 {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  margin: 0 0 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 18px;
+  padding-top: 0;
 }
 
 .footer-links a {
-  display: block;
-  color: var(--text);
-  margin-bottom: 0.55rem;
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem;
+  transition: color var(--transition-fast);
+  width: fit-content;
+  white-space: nowrap;
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--text);
+}
+
+.footer-links-separator {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
 }
 
 .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
   border-top: 1px solid var(--border);
-  padding-top: 1.5rem;
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (min-width: 640px) {
-  .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
+.footer-legal-line {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: rgba(100, 116, 139, 0.85);
+}
+
+@media (max-width: 860px) {
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    padding-bottom: 28px;
+    align-items: start;
   }
 
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .footer-brand-group {
+    grid-column: 1 / -1;
+    padding-right: 0;
   }
 
   .footer-links {
-    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .footer-company {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .footer-bottom {
+    padding: 16px 0;
+  }
+
+  .footer-legal-line {
+    text-align: left;
   }
 }
 
-@media (min-width: 860px) {
-  .main-nav {
-    display: flex;
+@media (max-width: 640px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 24px;
   }
 
-  .mobile-menu-toggle,
-  .mobile-nav {
-    display: none !important;
+  .footer-brand-group {
+    grid-column: auto;
   }
 
-  .three-up {
-    grid-template-columns: repeat(3, 1fr);
+  .footer-links,
+  .footer-company {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
-  .split {
-    grid-template-columns: 1.1fr 0.9fr;
+  .footer-links-separator {
+    display: none;
   }
 
-  .pricing-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .footer-bottom {
+    padding: 16px 0;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 2fr;
+  .footer-legal-line {
+    text-align: left;
   }
 }
