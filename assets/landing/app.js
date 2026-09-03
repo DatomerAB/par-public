@@ -4,7 +4,7 @@
   // Cache-busted per release so GitHub Pages CDN serves the fresh config.json
   // immediately after a new version is published. The RELEASE_TAG placeholder
   // is rewritten by the update-download-url workflow.
-  const CONFIG_PATH = 'assets/landing/config.json?{{RELEASE_TAG}}';
+  const CONFIG_PATH = 'assets/landing/config.json?v0.1.1-beta.2026090301';
 
   // Mobile nav toggle
   const toggle = document.querySelector('.mobile-menu-toggle');
