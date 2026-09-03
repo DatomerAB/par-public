@@ -47,8 +47,13 @@ jobs:
           fi
 
           CONFIG_PATH="assets/landing/config.json"
+          APP_JS_PATH="assets/landing/app.js"
           if [[ ! -f "$CONFIG_PATH" ]]; then
             echo "❌ Config file not found: $CONFIG_PATH"
+            exit 1
+          fi
+          if [[ ! -f "$APP_JS_PATH" ]]; then
+            echo "❌ App JS file not found: $APP_JS_PATH"
             exit 1
           fi
 
@@ -63,8 +68,15 @@ jobs:
           jq --arg url "$DMG_URL" '.downloadUrl = $url' "$CONFIG_PATH" > "$CONFIG_PATH.tmp"
           mv "$CONFIG_PATH.tmp" "$CONFIG_PATH"
 
+          # Bust the GitHub Pages CDN cache for config.json by rewriting the
+          # release tag in the fetch path. This guarantees visitors see the
+          # latest download URL immediately after a release.
+          sed -i "s|config.json?{{RELEASE_TAG}}|config.json?${TAG}|g" "$APP_JS_PATH"
+
           echo "✅ Updated $CONFIG_PATH with download URL for $TAG"
           cat "$CONFIG_PATH"
+          echo "✅ Busted cache in $APP_JS_PATH"
+          grep -n "CONFIG_PATH" "$APP_JS_PATH"
 
       - name: Commit and push
         shell: bash
@@ -76,11 +88,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet -- assets/landing/config.json; then
+          if git diff --quiet -- assets/landing/config.json assets/landing/app.js; then
             echo "ℹ No changes to commit."
             exit 0
           fi
 
-          git add assets/landing/config.json
+          git add assets/landing/config.json assets/landing/app.js
           git commit -m "chore: update download URL to $TAG"
           git push origin main
