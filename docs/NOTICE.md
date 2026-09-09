@@ -54,14 +54,6 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **Source:** https://huggingface.co/rico03/Qwen3.6-27B-Claude-Opus-Reasoning-Distilled-GGUF
 - **Use in Pär:** Qwen3.6 27B Claude Opus Reasoning Distilled by rico03, used under the apache-2.0 license. Source: https://huggingface.co/rico03/Qwen3.6-27B-Claude-Opus-Reasoning-Distilled-GGUF
 
-### Fable Therapy 4B
-
-- **Authors:** Verdugie
-- **License:** apache-2.0
-- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
-- **Source:** https://huggingface.co/Verdugie/Fable-Therapy-4B
-- **Use in Pär:** Fable Therapy 4B by Verdugie, used under the apache-2.0 license. Source: https://huggingface.co/Verdugie/Fable-Therapy-4B
-
 ### nanbeige4.1 3b q8 0
 
 - **Authors:** Edge-Quant
