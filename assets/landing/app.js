@@ -2,8 +2,8 @@
   'use strict';
 
   // Cache-busted per release so GitHub Pages CDN serves the fresh config.json
-  // immediately after a new version is published. The RELEASE_TAG placeholder
-  // is rewritten by the update-download-url workflow.
+  // immediately after a new version is published. The query string is rewritten
+  // in place by the update-download-url workflow on every release.
   const CONFIG_PATH = 'assets/landing/config.json?v0.1.5-beta.2026090807';
 
   // Mobile nav toggle

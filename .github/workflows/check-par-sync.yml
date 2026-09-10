@@ -23,7 +23,8 @@ jobs:
 
       - name: Fetch canonical NOTICE from Pär
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # DatomerAB/Par is private, so the repo-scoped GITHUB_TOKEN cannot read it.
+          GH_TOKEN: ${{ secrets.CROSS_REPO_DISPATCH_TOKEN }}
         run: |
           set -euo pipefail
           mkdir -p /tmp/par-canonical
