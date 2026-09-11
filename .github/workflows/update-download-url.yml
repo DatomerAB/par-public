@@ -71,7 +71,17 @@ jobs:
           # Bust the GitHub Pages CDN cache for config.json by rewriting the
           # release tag in the fetch path. This guarantees visitors see the
           # latest download URL immediately after a release.
-          sed -i "s|config.json?{{RELEASE_TAG}}|config.json?${TAG}|g" "$APP_JS_PATH"
+          # Matches whatever currently follows `config.json?` rather than a
+          # one-shot placeholder, so it keeps working on every later release.
+          sed -i -E "s|(config\.json\?)[^']*|\1${TAG}|g" "$APP_JS_PATH"
+
+          if ! grep -q "config.json?${TAG}" "$APP_JS_PATH"; then
+            echo "❌ Cache-buster was not rewritten in $APP_JS_PATH."
+            echo "   Expected to find: config.json?${TAG}"
+            echo "   Current value:"
+            grep -n "CONFIG_PATH" "$APP_JS_PATH"
+            exit 1
+          fi
 
           echo "✅ Updated $CONFIG_PATH with download URL for $TAG"
           cat "$CONFIG_PATH"
