@@ -6,13 +6,13 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 
 ## Open-source models bundled or downloadable by Pär
 
-### nanbeige4.1 3b q4 k m
+### Qwen2.5 3B Instruct
 
-- **Authors:** Edge-Quant
+- **Authors:** Qwen
 - **License:** apache-2.0
 - **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
-- **Source:** https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q4_K_M-GGUF
-- **Use in Pär:** nanbeige4.1 3b q4 k m by Edge-Quant, used under the apache-2.0 license. Source: https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q4_K_M-GGUF
+- **Source:** https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF
+- **Use in Pär:** Qwen2.5 3B Instruct by Qwen, used under the apache-2.0 license. Source: https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF
 
 ### qwen3 14b q4 k m
 
@@ -53,14 +53,6 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
 - **Source:** https://huggingface.co/rico03/Qwen3.6-27B-Claude-Opus-Reasoning-Distilled-GGUF
 - **Use in Pär:** Qwen3.6 27B Claude Opus Reasoning Distilled by rico03, used under the apache-2.0 license. Source: https://huggingface.co/rico03/Qwen3.6-27B-Claude-Opus-Reasoning-Distilled-GGUF
-
-### nanbeige4.1 3b q8 0
-
-- **Authors:** Edge-Quant
-- **License:** apache-2.0
-- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
-- **Source:** https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q8_0-GGUF
-- **Use in Pär:** nanbeige4.1 3b q8 0 by Edge-Quant, used under the apache-2.0 license. Source: https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q8_0-GGUF
 
 ### qwen2.5 7b instruct q4 k m
 
