@@ -6,13 +6,21 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 
 ## Open-source models bundled or downloadable by Pär
 
-### Qwen2.5 3B Instruct
+### qwen2.5 coder 3b instruct q4 k m
 
-- **Authors:** Qwen
+- **Authors:** bocalan
+- **License:** other
+- **License text:** [legal/other-LICENSE.txt](legal/other-LICENSE.txt)
+- **Source:** https://huggingface.co/bocalan/Qwen2.5-Coder-3B-Instruct-Q4_K_M-GGUF
+- **Use in Pär:** qwen2.5 coder 3b instruct q4 k m by bocalan, used under the other license. Source: https://huggingface.co/bocalan/Qwen2.5-Coder-3B-Instruct-Q4_K_M-GGUF
+
+### ExoMind 9B.Q4 K M
+
+- **Authors:** prithivMLmods
 - **License:** apache-2.0
 - **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
-- **Source:** https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF
-- **Use in Pär:** Qwen2.5 3B Instruct by Qwen, used under the apache-2.0 license. Source: https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF
+- **Source:** https://huggingface.co/prithivMLmods/AI4SGI-ExoMind-9B-GGUF
+- **Use in Pär:** ExoMind 9B.Q4 K M by prithivMLmods, used under the apache-2.0 license. Source: https://huggingface.co/prithivMLmods/AI4SGI-ExoMind-9B-GGUF
 
 ### qwen3 14b q4 k m
 
@@ -29,6 +37,62 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
 - **Source:** https://huggingface.co/barozp/Qwen3.6-28B-REAP20-A3B-GGUF
 - **Use in Pär:** Qwen3.6 28B REAP20 A3B by barozp, used under the apache-2.0 license. Source: https://huggingface.co/barozp/Qwen3.6-28B-REAP20-A3B-GGUF
+
+### qwen3 4b instruct 2507 q8 0
+
+- **Authors:** ggml-org
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/ggml-org/Qwen3-4B-Instruct-2507-Q8_0-GGUF
+- **Use in Pär:** qwen3 4b instruct 2507 q8 0 by ggml-org, used under the apache-2.0 license. Source: https://huggingface.co/ggml-org/Qwen3-4B-Instruct-2507-Q8_0-GGUF
+
+### qwen3 8b q4 k m
+
+- **Authors:** Aldaris
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/Aldaris/Qwen3-8B-Q4_K_M-GGUF
+- **Use in Pär:** qwen3 8b q4 k m by Aldaris, used under the apache-2.0 license. Source: https://huggingface.co/Aldaris/Qwen3-8B-Q4_K_M-GGUF
+
+### qwen2.5 coder 7b instruct q8 0
+
+- **Authors:** ggml-org
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/ggml-org/Qwen2.5-Coder-7B-Instruct-Q8_0-GGUF
+- **Use in Pär:** qwen2.5 coder 7b instruct q8 0 by ggml-org, used under the apache-2.0 license. Source: https://huggingface.co/ggml-org/Qwen2.5-Coder-7B-Instruct-Q8_0-GGUF
+
+### qwen2.5 coder 7b q8 0
+
+- **Authors:** ggml-org
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/ggml-org/Qwen2.5-Coder-7B-Q8_0-GGUF
+- **Use in Pär:** qwen2.5 coder 7b q8 0 by ggml-org, used under the apache-2.0 license. Source: https://huggingface.co/ggml-org/Qwen2.5-Coder-7B-Q8_0-GGUF
+
+### qwen2.5 coder 14b instruct q8 0
+
+- **Authors:** ggml-org
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/ggml-org/Qwen2.5-Coder-14B-Instruct-Q8_0-GGUF
+- **Use in Pär:** qwen2.5 coder 14b instruct q8 0 by ggml-org, used under the apache-2.0 license. Source: https://huggingface.co/ggml-org/Qwen2.5-Coder-14B-Instruct-Q8_0-GGUF
+
+### qwen2.5 coder 14b instruct q4 k m
+
+- **Authors:** itlwas
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/itlwas/Qwen2.5-Coder-14B-Instruct-Q4_K_M-GGUF
+- **Use in Pär:** qwen2.5 coder 14b instruct q4 k m by itlwas, used under the apache-2.0 license. Source: https://huggingface.co/itlwas/Qwen2.5-Coder-14B-Instruct-Q4_K_M-GGUF
+
+### qwen2.5 32b instruct q4 k m
+
+- **Authors:** TheRains
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/TheRains/Qwen2.5-32B-Instruct-Q4_K_M-GGUF
+- **Use in Pär:** qwen2.5 32b instruct q4 k m by TheRains, used under the apache-2.0 license. Source: https://huggingface.co/TheRains/Qwen2.5-32B-Instruct-Q4_K_M-GGUF
 
 ### VibeThinker 3B.Q4 K M
 
@@ -77,6 +141,46 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **License text:** [legal/other-LICENSE.txt](legal/other-LICENSE.txt)
 - **Source:** https://huggingface.co/GestaltLabs/Ornstein-Hermes-3.6-27B-SABER-GGUF
 - **Use in Pär:** Ornstein Hermes 3.6 27b SABER by GestaltLabs, used under the other license. Source: https://huggingface.co/GestaltLabs/Ornstein-Hermes-3.6-27B-SABER-GGUF
+
+### qwen2.5 coder 7b q4 k m
+
+- **Authors:** itlwas
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/itlwas/Qwen2.5-Coder-7B-Q4_K_M-GGUF
+- **Use in Pär:** qwen2.5 coder 7b q4 k m by itlwas, used under the apache-2.0 license. Source: https://huggingface.co/itlwas/Qwen2.5-Coder-7B-Q4_K_M-GGUF
+
+### NeoHorse 1 4B.Q4 K M
+
+- **Authors:** prithivMLmods
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/prithivMLmods/NeoHorse-1-4B-GGUF
+- **Use in Pär:** NeoHorse 1 4B.Q4 K M by prithivMLmods, used under the apache-2.0 license. Source: https://huggingface.co/prithivMLmods/NeoHorse-1-4B-GGUF
+
+### nanbeige4.1 3b q4 k m
+
+- **Authors:** Edge-Quant
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q4_K_M-GGUF
+- **Use in Pär:** nanbeige4.1 3b q4 k m by Edge-Quant, used under the apache-2.0 license. Source: https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q4_K_M-GGUF
+
+### nanbeige4.1 3b q8 0
+
+- **Authors:** Edge-Quant
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q8_0-GGUF
+- **Use in Pär:** nanbeige4.1 3b q8 0 by Edge-Quant, used under the apache-2.0 license. Source: https://huggingface.co/Edge-Quant/Nanbeige4.1-3B-Q8_0-GGUF
+
+### qwen2.5 coder 1.5b q8 0
+
+- **Authors:** ggml-org
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/ggml-org/Qwen2.5-Coder-1.5B-Q8_0-GGUF
+- **Use in Pär:** qwen2.5 coder 1.5b q8 0 by ggml-org, used under the apache-2.0 license. Source: https://huggingface.co/ggml-org/Qwen2.5-Coder-1.5B-Q8_0-GGUF
 
 ## Embedding models
 
