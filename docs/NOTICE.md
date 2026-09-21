@@ -54,6 +54,22 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **Source:** https://huggingface.co/Aldaris/Qwen3-8B-Q4_K_M-GGUF
 - **Use in Pär:** qwen3 8b q4 k m by Aldaris, used under the apache-2.0 license. Source: https://huggingface.co/Aldaris/Qwen3-8B-Q4_K_M-GGUF
 
+### qwen3 4b q4 k m
+
+- **Authors:** Aldaris
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/Aldaris/Qwen3-4B-Q4_K_M-GGUF
+- **Use in Pär:** qwen3 4b q4 k m by Aldaris, used under the apache-2.0 license. Source: https://huggingface.co/Aldaris/Qwen3-4B-Q4_K_M-GGUF
+
+### qwen2.5 coder 1.5b instruct q8 0
+
+- **Authors:** ggml-org
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/ggml-org/Qwen2.5-Coder-1.5B-Instruct-Q8_0-GGUF
+- **Use in Pär:** qwen2.5 coder 1.5b instruct q8 0 by ggml-org, used under the apache-2.0 license. Source: https://huggingface.co/ggml-org/Qwen2.5-Coder-1.5B-Instruct-Q8_0-GGUF
+
 ### qwen2.5 coder 7b instruct q8 0
 
 - **Authors:** ggml-org
@@ -70,6 +86,14 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **Source:** https://huggingface.co/ggml-org/Qwen2.5-Coder-7B-Q8_0-GGUF
 - **Use in Pär:** qwen2.5 coder 7b q8 0 by ggml-org, used under the apache-2.0 license. Source: https://huggingface.co/ggml-org/Qwen2.5-Coder-7B-Q8_0-GGUF
 
+### NeoHorse 1 9B.Q4 K M
+
+- **Authors:** prithivMLmods
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/prithivMLmods/NeoHorse-1-9B-GGUF
+- **Use in Pär:** NeoHorse 1 9B.Q4 K M by prithivMLmods, used under the apache-2.0 license. Source: https://huggingface.co/prithivMLmods/NeoHorse-1-9B-GGUF
+
 ### qwen2.5 coder 14b instruct q8 0
 
 - **Authors:** ggml-org
@@ -85,6 +109,14 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
 - **Source:** https://huggingface.co/itlwas/Qwen2.5-Coder-14B-Instruct-Q4_K_M-GGUF
 - **Use in Pär:** qwen2.5 coder 14b instruct q4 k m by itlwas, used under the apache-2.0 license. Source: https://huggingface.co/itlwas/Qwen2.5-Coder-14B-Instruct-Q4_K_M-GGUF
+
+### qwen2.5 14b instruct q4 k m
+
+- **Authors:** TheRains
+- **License:** apache-2.0
+- **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
+- **Source:** https://huggingface.co/TheRains/Qwen2.5-14B-Instruct-Q4_K_M-GGUF
+- **Use in Pär:** qwen2.5 14b instruct q4 k m by TheRains, used under the apache-2.0 license. Source: https://huggingface.co/TheRains/Qwen2.5-14B-Instruct-Q4_K_M-GGUF
 
 ### qwen2.5 32b instruct q4 k m
 
