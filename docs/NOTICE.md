@@ -14,13 +14,13 @@ Pär downloads and runs open-source AI models locally on your device. The follow
 - **Source:** https://huggingface.co/bocalan/Qwen2.5-Coder-3B-Instruct-Q4_K_M-GGUF
 - **Use in Pär:** qwen2.5 coder 3b instruct q4 k m by bocalan, used under the other license. Source: https://huggingface.co/bocalan/Qwen2.5-Coder-3B-Instruct-Q4_K_M-GGUF
 
-### ExoMind 9B.Q4 K M
+### Orion 9B Agentic CodeCore Merge.Q4 K M
 
 - **Authors:** prithivMLmods
 - **License:** apache-2.0
 - **License text:** [legal/apache-2.0-LICENSE.txt](legal/apache-2.0-LICENSE.txt)
-- **Source:** https://huggingface.co/prithivMLmods/AI4SGI-ExoMind-9B-GGUF
-- **Use in Pär:** ExoMind 9B.Q4 K M by prithivMLmods, used under the apache-2.0 license. Source: https://huggingface.co/prithivMLmods/AI4SGI-ExoMind-9B-GGUF
+- **Source:** https://huggingface.co/prithivMLmods/Orion-9B-Agentic-CodeCore-Merge-GGUF
+- **Use in Pär:** Orion 9B Agentic CodeCore Merge.Q4 K M by prithivMLmods, used under the apache-2.0 license. Source: https://huggingface.co/prithivMLmods/Orion-9B-Agentic-CodeCore-Merge-GGUF
 
 ### qwen3 14b q4 k m
 
