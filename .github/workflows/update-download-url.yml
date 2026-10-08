@@ -95,7 +95,11 @@ jobs:
           # latest download URL immediately after a release.
           # Matches whatever currently follows `config.json?` rather than a
           # one-shot placeholder, so it keeps working on every later release.
-          sed -i -E "s|(config\.json\?)[^']*|\1${TAG}|g" "$APP_JS_PATH"
+          if [[ "$RUNNER_OS" == "macOS" ]]; then
+            sed -i '' -E "s|(config\.json\?)[^']*|\1${TAG}|g" "$APP_JS_PATH"
+          else
+            sed -i -E "s|(config\.json\?)[^']*|\1${TAG}|g" "$APP_JS_PATH"
+          fi
 
           if ! grep -q "config.json?${TAG}" "$APP_JS_PATH"; then
             echo "❌ Cache-buster was not rewritten in $APP_JS_PATH."
