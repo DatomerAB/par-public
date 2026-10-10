@@ -352,6 +352,42 @@ a {
     inset 0 0 0 1px rgba(15, 23, 42, 0.06);
 }
 
+.beta-download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 2rem;
+  margin-block: 2rem;
+  text-align: left;
+}
+
+.beta-download-platform h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0;
+}
+
+.beta-download-version {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.beta-download-version strong,
+.beta-download-version span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.beta-download-version span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+[hidden] { display: none !important; }
+
 /* Sections */
 .section {
   padding: clamp(4rem, 8vw, 6rem) 0;
@@ -875,16 +911,16 @@ a {
 }
 
 .footer-company .datomer-logo {
-  height: 48px;
+  height: 56px;
   width: auto;
-  opacity: 0.85;
-  filter: grayscale(1) contrast(1.1);
+  opacity: 1;
+  filter: none;
   transition: opacity var(--transition-fast), filter var(--transition-fast);
 }
 
 .footer-company:hover .datomer-logo {
   opacity: 1;
-  filter: grayscale(0.2) contrast(1.2);
+  filter: none;
 }
 
 .footer-links {

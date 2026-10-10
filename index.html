@@ -42,7 +42,7 @@
         <a href="docs/NOTICE.md">Licenses</a>
       </nav>
       <div class="nav-actions">
-        <a href="#download" class="btn btn-primary" id="navDownloadBtn">Download for Mac</a>
+        <a href="#download" class="btn btn-primary" id="navDownloadBtn">Beta downloads</a>
       </div>
     </div>
   </header>
@@ -51,14 +51,14 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <p class="eyebrow">Now in beta — Pär Desktop for macOS</p>
+          <p class="eyebrow">Pär Desktop beta</p>
           <h1>Your AI.<br>On your device.<br><span class="text-accent">Private by design.</span></h1>
           <p class="hero-lead">
             Pär is the personal AI companion that actually remembers you. It learns your goals,
             connects to your tools, and runs entirely on your own hardware — no cloud required.
           </p>
           <div class="hero-actions">
-            <a href="#download" class="btn btn-primary btn-large" id="heroDownloadBtn">Download for Mac</a>
+            <a href="#download" class="btn btn-primary btn-large" id="heroDownloadBtn">Beta downloads</a>
             <a href="https://datomer.eu" class="btn btn-secondary btn-large">Learn more</a>
           </div>
           <div class="hero-logo">
@@ -93,8 +93,8 @@
         </div>
         <div class="requirements-card">
           <ul class="checklist">
-            <li>macOS 11 (Big Sur) or later</li>
-            <li>Apple Silicon Mac (M1 or newer)</li>
+            <li>macOS 12 or later on Apple Silicon (M1 or newer)</li>
+            <li>Windows 10 or later on an x64 CPU</li>
             <li>8 GB RAM minimum (16 GB recommended)</li>
             <li>2 GB free disk space for the app; additional space for models</li>
             <li>Optional: Ollama installed for Ollama model support</li>
@@ -108,13 +108,12 @@
 
     <section class="section cta" id="download">
       <div class="container">
-        <div class="cta-box">
-          <h2>Ready to meet Pär?</h2>
-          <p>Download the free beta for macOS and keep your AI entirely on your device.</p>
+        <div>
+          <h2>Beta releases</h2>
+          <div id="betaDownloadOptions" class="beta-download-grid"></div>
           <div class="cta-actions">
-            <a href="#download" class="btn btn-primary btn-large" id="downloadBtn">Download for Mac</a>
+            <a href="#download" class="btn btn-primary btn-large" id="downloadBtn">Download beta</a>
           </div>
-          <p class="cta-note">Beta release. Requires macOS 11+. Apple Silicon recommended. GGUF models run natively; Ollama is optional.</p>
           <p>Visit <a href="https://datomer.eu">datomer.eu</a> for features, pricing, FAQ, and the latest news.</p>
         </div>
       </div>
@@ -146,7 +145,7 @@
         </nav>
 
         <div class="footer-company" aria-label="Datomer company logo">
-          <img src="assets/landing/datomer-logo.png" alt="Datomer AB" class="datomer-logo">
+          <img src="assets/landing/datomer-logo.png?v=20261010" alt="Datomer AB" class="datomer-logo" width="1166" height="399">
         </div>
       </div>
 
@@ -156,6 +155,6 @@
     </div>
   </footer>
 
-  <script src="assets/landing/app.js"></script>
+  <script type="module" src="assets/landing/app.js"></script>
 </body>
 </html>

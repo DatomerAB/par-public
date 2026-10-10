@@ -47,6 +47,7 @@ jobs:
 
   update:
     needs: runner-selection
+    if: ${{ !github.event.client_payload.download_catalog_url }}
     runs-on: ${{ fromJSON(needs.runner-selection.outputs.runs_on) }}
     steps:
       - name: Checkout
