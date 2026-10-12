@@ -28,9 +28,13 @@ Open http://localhost:8000.
 
 Push to the `main` branch. GitHub Actions will deploy to Pages automatically.
 
-## Download URL
+## Beta downloads
 
-`assets/landing/config.json` is updated automatically when a release is published from the private `Pär` repository. Do not edit it by hand unless you are fixing an emergency fallback URL.
+`downloads.json` in `DatomerAB/par-releases` is the source of truth for beta installers and their platform/variant presentation metadata. The landing page renders available catalog entries dynamically and validates installer URLs against immutable release assets.
+
+`.github/workflows/update-beta-downloads.yml` validates the catalog and its assets, updates `assets/landing/config.json` with the latest verified snapshot, runs the site tests and build, commits the snapshot, explicitly deploys GitHub Pages, and verifies the deployed revision. The snapshot is the fallback if the live catalog cannot be fetched. Do not edit it by hand unless you are fixing an emergency fallback.
+
+Legacy release dispatches without a catalog URL continue through `.github/workflows/update-download-url.yml` and update the single `downloadUrl` fallback.
 
 ## Model attribution
 
