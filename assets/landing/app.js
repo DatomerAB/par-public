@@ -88,7 +88,7 @@ export function validDownloadCatalog(catalog) {
   // Cache-busted per release so GitHub Pages CDN serves the fresh config.json
   // immediately after a new version is published. The query string is rewritten
   // in place by the update-download-url workflow on every release.
-  const CONFIG_PATH = 'assets/landing/config.json?9316741e4645f6952801e3092a9c011ebc4e81f226c3b58f0571342167d4234c';
+  const CONFIG_PATH = 'assets/landing/config.json?7dbfd422eecb5b2d0d08ec5c50e41b3ab0e3c513d0b78a6e7d54ea78d59f2d92';
 
   // Mobile nav toggle
   const toggle = document.querySelector('.mobile-menu-toggle');
