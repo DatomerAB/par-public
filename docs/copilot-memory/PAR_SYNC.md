@@ -9,7 +9,9 @@
 ## Workflows
 
 - `update-download-url.yml` — handles `release-published` dispatch.
-- `check-par-sync.yml` — weekly validates `NOTICE.md` matches Pär.
+- `check-par-sync.yml` — validates `NOTICE.md` matches Pär on alternate Mondays
+  at 06:00 UTC, anchored to 2026-11-02, plus relevant PRs and manual dispatch.
+  Off-weeks run only runner selection and the cadence gate.
 - `static.yml` — deploys GitHub Pages.
 
 ## Source of truth

@@ -12,6 +12,12 @@ This is the lightweight public fallback site for [Pär](https://datomer.eu). It 
 - `.github/workflows/static.yml` — GitHub Pages deployment
 - `.github/workflows/check-par-sync.yml` — validates `NOTICE.md` stays in sync
 
+Content-sync checks run every other Monday at 06:00 UTC, anchored to November 2,
+2026 (November 16, November 30, and so on). Relevant pull requests and manual
+dispatch still run the checks immediately. A weekly cron starts runner selection
+and a small cadence gate; full checks are skipped on off-weeks. The schedule
+takes effect when the workflow change reaches the default branch.
+
 ## What's NOT here
 
 All source code, models, build scripts, documentation, signing keys, and license infrastructure live in the private `Pär` repository. Signed releases are published to a separate public releases repository.
